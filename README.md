@@ -9,7 +9,9 @@ The first step was to clean up the data so it becomes easy to use in R. Since th
 
 
 
-According to the authors five sensors recorded the Ground True concentrations of carbon monoxide (CO), Non-metanic hydrocarbons (NMHC), Benzene (C<sub>6</sub>H<sub>6</sub>), nitrogen oxides (NO<sub>x</sub>), and nitrogen dioxide (NO<sub>2</sub>). Additionally, these five sensors also recorded measurements of one additional particulate; as a result, I wanted to consider the relation between the primary and secondary particulate that was measured by each sensor. Sensor 1, which targeted CO also recorded measurements of tin oxide, SnO<sub>2</sub>. The column in the data is labelled PT08.S1. 
+According to the authors five sensors recorded the Ground True concentrations of carbon monoxide (CO), Non-metanic hydrocarbons (NMHC), Benzene (C<sub>6</sub>H<sub>6</sub>), nitrogen oxides (NO<sub>x</sub>), and nitrogen dioxide (NO<sub>2</sub>). Additionally, these five sensors also recorded measurements of one additional particulate; as a result, I wanted to consider the relation between the primary and secondary particulate that was measured by each sensor. 
+
+Sensor 1, which targeted CO also recorded measurements of tin oxide, SnO<sub>2</sub>. The column in the data is labelled PT08.S1. When we plot CO against SnO<sub>2</sub>, we find that there is a highly linear relationship between them. This implies that knowing one can predict the other, and having both as predictors for the temperature is unneccesary.
 
 
 
