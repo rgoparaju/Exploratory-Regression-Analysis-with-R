@@ -30,6 +30,8 @@ Lastly, sensor 5 recorded measurements of indium oxide In<sub>2</sub>O<sub>3</su
 
 Thus, I did not consider the secondary particulates when forming the model for the Temperature, since the primary particulate would be sufficient, and I wanted to avoid any cross-effects. Similarly, I also wanted to examine the relationship between relative humidity (RH) and absolute humidity (AH). I found that they are weakly linearly correlated, with a coefficient of about 0.48, so I wanted to exclude RH from the regression model, since there would be a weak cross-effect between RH and AH.
 
+![](plots/AH_RH.png)
+
 I first tried a linear regression model in which every primary particulate along with the Absolute Humidity were used as predictors, and sought to keep only the ones that were statistically significant. When looking at the calculated p-value of a chemical, I considered p-values less than 0.05 to be significant. I found that NMHC had a p-value > 0.05, so after removing it, I came up with a model that has the 6 explanatory variables CO, C<sub>6</sub>H<sub>6</sub>, NO<sub>x</sub>, NO<sub>2</sub>, In<sub>2</sub>O<sub>3</sub> and AH. This model served as a fairly accurate predictor of the average temperature.
 
 However, I also wanted to examine the cross effects between these particulates and the Absolute Humidity, AH. I added in the term for each variable from the latest iteration of the model mulitiplied with the AH
