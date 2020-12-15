@@ -15,7 +15,7 @@ Sensor 1, which targeted CO also recorded measurements of tin oxide, SnO<sub>2</
 ![Plot of Carbon Monoxide vs Tin Oxide](plots/CO_SnO2.png)
 
 Similarly, sensor 2 primarily took measurements of NMHC but also of a material the reserchears refer to as titania, which is just titanium dioxide TiO<sub>2</sub>. The relation between NMHC and TiO<sub>2</sub> seemed to be exponential, which I confirmed by plotting log(NMHC) against TiO<sub>2</sub>, which gave a correlation of about 0.93. Once again, since the secondary chemical TiO<sub>2</sub> is highly related to the primary chemical NMHC, I only consider NMHC.
-![Plots of Non-metanic hydrocarbons vs. Titanium Dioxide](plots/NMHC ~ TiO2.png)
+![Plots of Non-metanic hydrocarbons vs. Titanium Dioxide](plots/NMHC_TiO2.png)
 
 Sensor 3 took measurements primarily of (NO<sub>x</sub>), but also of tungsten oxide (labelled PT08.S3). Sensor 4, primarily (NO<sub>2</sub>) but also tungsten oxide (labelled PT08.S4). Lastly, sensor 5 recorded measurements of indium oxide In<sub>2</sub>O<sub>3</sub>, but it nominally targets ozone, O<sub>3</sub>. But since the data does not contain a column for O<sub>3</sub>, I did not need to consider its relation to indium oxide.
 
