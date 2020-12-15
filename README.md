@@ -12,13 +12,15 @@ The first step was to clean up the data so it becomes easy to use in R. Since th
 According to the authors five sensors recorded the Ground True concentrations of carbon monoxide (CO), Non-metanic hydrocarbons (NMHC), Benzene (C<sub>6</sub>H<sub>6</sub>), nitrogen oxides (NO<sub>x</sub>), and nitrogen dioxide (NO<sub>2</sub>). Additionally, these five sensors also recorded measurements of one additional particulate; as a result, I wanted to consider the relation between the primary and secondary particulate that was measured by each sensor. 
 
 Sensor 1, which targeted CO also recorded measurements of tin oxide, SnO<sub>2</sub>. The column in the data is labelled PT08.S1. When we plot CO against SnO<sub>2</sub>, we find that there is a highly linear relationship between them, since they have a correlation coefficient of about 0.94. This implies that knowing one can predict the other, and having both as predictors for the temperature is unneccesary.
-![Plot of Carbon Monoxide vs Tin Oxide](plots/CO_SnO2.png)
+![](plots/CO_SnO2.png)
 
 Similarly, sensor 2 primarily took measurements of NMHC but also of a material the reserchears refer to as titania, which is just titanium dioxide TiO<sub>2</sub>. The relation between NMHC and TiO<sub>2</sub> seemed to be exponential, which I confirmed by plotting log(NMHC) against TiO<sub>2</sub>, which gave a correlation of about 0.93. Once again, since the secondary chemical TiO<sub>2</sub> is highly related to the primary chemical NMHC, I only consider NMHC.
 
-![Plots of Non-metanic hydrocarbons vs. Titanium Dioxide](plots/NMHC_TiO2.png)
+![](plots/NMHC_TiO2.png)
 
 Sensor 3 took measurements primarily of the total nitrogen oxides NO<sub>x</sub>, but also of tungsten oxide WO<sub>3</sub>. Like NMHC, there was an exponential relationship between NO<sub>x</sub> and WO<sub>3</sub>, which I saw by plotting log(NO<sub>x</sub>) against WO<sub>3</sub> which gave a correlation coeff. of about -0.90. Thus, I only consider NO<sub>x</sub> for the regression.
+
+![](plots/NOx_WO3.png)
 
 Sensor 4, primarily (NO<sub>2</sub>) but also tungsten oxide (labelled PT08.S4). Lastly, sensor 5 recorded measurements of indium oxide In<sub>2</sub>O<sub>3</sub>, but it nominally targets ozone, O<sub>3</sub>. But since the data does not contain a column for O<sub>3</sub>, I did not need to consider its relation to indium oxide.
 
