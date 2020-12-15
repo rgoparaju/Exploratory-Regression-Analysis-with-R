@@ -23,7 +23,12 @@ Sensor 3 took measurements primarily of the total nitrogen oxides NO<sub>x</sub>
 
 ![](plots/NOx_WO3.png)
 
-Sensor 4, primarily (NO<sub>2</sub>) but also tungsten oxide (labelled PT08.S4). Lastly, sensor 5 recorded measurements of indium oxide In<sub>2</sub>O<sub>3</sub>, but it nominally targets ozone, O<sub>3</sub>. But since the data does not contain a column for O<sub>3</sub>, I did not need to consider its relation to indium oxide.
+Sensor 4 primarily recorded NO<sub>2</sub>, but also secondarily recorded tungsten oxide as well. I found that the correlation was very linear, with a correlation coeff. of about 0.81. I did not see an exponential relationship between the two, so I did not take log(NO<sub>2</sub>). I decided to only use NO<sub>2</sub> as a predictor.
+
+![](plots/NO2_WO3.png)
+
+
+Lastly, sensor 5 recorded measurements of indium oxide In<sub>2</sub>O<sub>3</sub>, but it nominally targets ozone, O<sub>3</sub>. But since the data does not contain a column for O<sub>3</sub>, I did not need to consider its relation to indium oxide.
 
 I plotted the primary particulates against their respective secondaries, and found that all were strongly correlated. As a result, I did not consider the secondary particulates when forming the model for the Temperature, since the primary particulate would be sufficient, and I wanted to avoid any cross-effects. Similarly, I also wanted to examine the relationship between relative humidity (RH) and absolute humidity (AH). I found that they are weakly linearly correlated, so I wanted to exclude RH from the regression model, since there would be a weak cross-effect between RH and AH.
 
