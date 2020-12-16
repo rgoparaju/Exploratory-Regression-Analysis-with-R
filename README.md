@@ -37,4 +37,4 @@ I first tried a linear regression model in which every primary particulate along
 
 ![](reg/reg_2.JPG)
 
-However, I also wanted to examine the cross effects between these particulates and the Absolute Humidity, AH. I added in the term for each variable from the latest iteration of the model mulitiplied with the AH
+However, I also wanted to examine the cross effects between these particulates and the Absolute Humidity, AH. I added in the term for each variable from the model mulitiplied with the AH. Once again, I examined the significance level and determined that the term for NO<sub>2</sub> * AH is
