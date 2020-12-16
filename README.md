@@ -35,6 +35,6 @@ Thus, I did not consider the secondary particulates when forming the model for t
 
 I first tried a linear regression model in which every primary particulate along with the Absolute Humidity were used as predictors, and sought to keep only the ones that were statistically significant. When looking at the calculated p-value of a chemical, I considered p-values less than 0.05 to be significant. I found that NMHC had a p-value of about 0.92, so after removing it, I came up with a model that has the 6 explanatory variables CO, C<sub>6</sub>H<sub>6</sub>, NO<sub>x</sub>, NO<sub>2</sub>, In<sub>2</sub>O<sub>3</sub> and AH. This model served as a fairly accurate predictor of the average temperature, as shown below:
 
-
+![](reg/reg_1.jpg)
 
 However, I also wanted to examine the cross effects between these particulates and the Absolute Humidity, AH. I added in the term for each variable from the latest iteration of the model mulitiplied with the AH
