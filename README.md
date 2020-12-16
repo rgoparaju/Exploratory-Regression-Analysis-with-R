@@ -37,4 +37,8 @@ I first tried a linear regression model in which every primary particulate along
 
 ![](reg/reg_2.JPG)
 
-However, I also wanted to examine the cross effects between these particulates and the Absolute Humidity, AH. I added in the term for each variable from the model mulitiplied with the AH. Once again, I examined the significance level and determined that the term for NO<sub>2</sub> * AH is
+However, I also wanted to examine the cross effects between these particulates and the Absolute Humidity, AH. I added in the term for each variable from the model mulitiplied with the AH. Once again, I examined the significance level and determined that the term for NO<sub>2</sub> * AH was not significant since the p-value was about 0.73. After removing that term from the regression I get the model
+
+![](reg/reg_4.JPG)
+
+Note that even though the inclusion of the term NO<sub>x</sub> * AH makes the term for NO<sub>x</sub> no longer signifcant, I am still including it in the model. Finally, we get a model for predicting the temperature given the conditions of a subset of the chemicals present in the air, and their interactions with the absolute humidity. Using the model, I make a prediction for the temperature, and compare it with the actual value to determine the percent error.
