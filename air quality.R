@@ -1,4 +1,4 @@
-air_quality = read.csv("C:\\Users\\Teja\\Desktop\\Project and datasets\\AirQualityUCI\\AirQualityUCI.csv")
+air_quality = read.csv("AirQualityUCI.csv")
 air_quality = subset(air_quality, CO.GT. != -200 & PT08.S1.CO. != -200 & NMHC.GT. != -200 & C6H6.GT. != -200 & PT08.S2.NMHC. != -200 & NOx.GT. != -200 & PT08.S3.NOx. != -200 & NO2.GT. != -200 & PT08.S4.NO2. != -200 & PT08.S5.O3. != -200 & T != -200 & RH != -200 & AH != -200)
 
 CO = air_quality$CO.GT.
