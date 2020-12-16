@@ -15,7 +15,7 @@ Sensor 1, which targeted CO also recorded measurements of tin oxide, SnO<sub>2</
 
 ![](plots/CO_SnO2.png)
 
-Similarly, sensor 2 primarily took measurements of NMHC but also of a material the reserchears refer to as titania, which is just titanium dioxide TiO<sub>2</sub>. The relation between NMHC and TiO<sub>2</sub> seemed to be exponential, which I confirmed by plotting log(NMHC) against TiO<sub>2</sub>, which gave a correlation of about 0.93. Once again, since the secondary chemical TiO<sub>2</sub> is highly related to the primary chemical NMHC, I only consider NMHC.
+Similarly, sensor 2 primarily took measurements of NMHC but also of a material the researchers refer to as titania, which is just titanium dioxide TiO<sub>2</sub>. The relation between NMHC and TiO<sub>2</sub> seemed to be exponential, which I confirmed by plotting log(NMHC) against TiO<sub>2</sub>, which gave a correlation of about 0.93. Once again, since the secondary chemical TiO<sub>2</sub> is highly related to the primary chemical NMHC, I only consider NMHC.
 
 ![](plots/NMHC_TiO2.png)
 
