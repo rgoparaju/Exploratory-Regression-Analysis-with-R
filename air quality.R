@@ -74,4 +74,14 @@ reg_3 = lm(T ~ . -Date -Time -NMHC.GT. -PT08.S1.CO. -PT08.S2.NMHC. -PT08.S3.NOx.
 summary(reg_3)
 # None of the cross effects are significant, so we will continue to use reg_2
 
+sum_of_perc_errs = 0
+calc = 0
+for(i in 1:length(air_quality$Date)){
+  calc = 0
+  calc = calc + 15.309530 + -3.371883*air_quality$CO.GT.[i] + 1.329935*air_quality$C6H6.GT.[i] + -0.042487*air_quality$NOx.GT.[i]
+
+  sum_of_perc_errs = sum_of_perc_errs + 100*((air_quality$T[i] - calc)/air_quality$T[i])
+}
+avg_perc_err = sum_of_perc_errs/length(air_quality$Date)
+avg_perc_err
 
