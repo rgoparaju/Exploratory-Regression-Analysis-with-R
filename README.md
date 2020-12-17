@@ -38,12 +38,12 @@ Similarly, I also wanted to examine the relationship between relative humidity (
 ![](plots/AH_RH.png)
 
 #### Prediction with Linear Regression
-I first tried a linear regression model in which every primary particulate along with the Absolute Humidity were used as predictors, and sought to keep only the ones that were statistically significant. When looking at the calculated p-value of a chemical, I considered p-values less than 0.05 to be significant. I found that NMHC had a p-value of about 0.92, so after removing it, I came up with a model that has the 6 explanatory variables CO, C<sub>6</sub>H<sub>6</sub>, NO<sub>x</sub>, NO<sub>2</sub>, In<sub>2</sub>O<sub>3</sub> and AH. This model served as a fairly accurate predictor of the average temperature, as shown below:
+I first tried a linear regression model in which every primary particulate along with the Absolute Humidity were used as predictors, and sought to keep only the ones that were statistically significant. When looking at the calculated p-value of a chemical, I considered p-values less than 0.05 to be significant. I found that NMHC, In<sub>2</sub>O<sub>3</sub> and AH all had p=values greater than, so I removed them in the next iteration. I came up with a model that has the 3 explanatory variables CO, C<sub>6</sub>H<sub>6</sub>, NO<sub>x</sub>. This model seemed to be a fairly accurate predictor of the average temperature, as shown below:
 
 ![](reg/reg_2.JPG)
 
-However, I also wanted to examine the cross effects between these particulates and the Absolute Humidity, AH. I added in the term for each variable from the model mulitiplied with the AH. Once again, I examined the significance level and determined that the term for NO<sub>2</sub> * AH was not significant since the p-value was about 0.73. After removing that term from the regression I get the model
+However, I also wanted to examine the cross effects between these particulates and the Absolute Humidity, AH. I added in the term for each variable from the model mulitiplied with the AH, along with AH itself. Once again, I examined the significance level and found that neither the absolute humidity nor any of the cross-terms had any significance in the regression, as shown below, since all their p-values were much greater than 0.05.
 
-![](reg/reg_4.JPG)
+![](reg/reg_3.JPG)
 
-Note that even though the inclusion of the term NO<sub>x</sub> * AH makes the term for NO<sub>x</sub> no longer signifcant, I am still including it in the model. Finally, we get a model for predicting the temperature given the conditions of a subset of the chemicals present in the air, and their interactions with the absolute humidity. Using the model, I make a prediction for the temperature, and compare it with the actual value to determine the percent error.
+I decided to continue using the second version of the regression model, since that serves as the model with the least number of statistically significant predictors. Using this model I wanted to make a prediction using data in the table, and calculate the percent error for the true value of the temperature.
