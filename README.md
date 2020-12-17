@@ -48,7 +48,7 @@ However, I also wanted to examine the cross effects between these particulates a
 
 I decided to continue using the second version of the regression model, since that serves as the model with the least number of statistically significant predictors. Using this model I wanted to make predictions of the temperature, and calculate the percent error for the true value. Using the coefficients given by the regression, I have the equation
 
-                                                   *T = 15.31 - 3.37c + 1.33b - 0.04n*
+                                                    T = 15.31 - 3.37c + 1.33b - 0.04n
 
 where *T* is the temperature in Celsius, *c* is the amount of carbon monoxide (CO), *b* is the amount of benzene (C<sub>6</sub>H<sub>6</sub>), and *n* is the amount of total nitrogen oxides (NO<subx</sub>). I wanted to calculate the average percent error the model achieves when estimating the temperature. Using the given data, I calculated the estimate, then the percent difference between the actual value and calculated value. Then I averaged all these values to find that the average percent difference between the actual temperature and estimates is approximately -6.57%. This implies that the model was consistently underestimating the correct temperature. In order to fix this problem, one solution might be to include more explanatory variables; the value of the adjusted R-squared for this model is about 0.37, and interpreting this in context, this means that only about 37% of the variance in the temperature can be explained by the explanatory variables. Since adding more variables will increase the model's effectiveness. 
 
