@@ -54,4 +54,4 @@ where *T* is the temperature in Celsius, *c* is the amount of carbon monoxide (C
 
 Going back and looking at my method, I found that including the predictors that I had initially discarded, that is, the secondary chemicals which were measured by 4 of the 5 sensors, I found that including them all and then removing those which were insignificant dramatically improved the model's adjusted R-squared value, to over 95%. This meant that the regression was doing a much better job at fitting the parameters to the temperature. Likewise, when I calculated the average percent error, I found that it decreased drastically to about -0.03%, which is extremely good. In conclusion, I've learned that even though there may be strong relationships or correlations between variables in a data set, ignoring them may prove to be detrimental to a regression model. 
 
-
+![](reg/reg_4.JPG)
