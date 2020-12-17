@@ -85,3 +85,17 @@ for(i in 1:length(air_quality$Date)){
 avg_perc_err = sum_of_perc_errs/length(air_quality$Date)
 avg_perc_err
 
+# Let's try with a different model:
+reg_4 = lm(T ~ . -Date -Time -PT08.S1.CO. -NMHC.GT. -C6H6.GT., data = air_quality)
+summary(reg_4)
+# Here we have eliminated PT08.S1.CO., NMHC.GT. and C6H6.GT.
+sum_of_perc_errs = 0
+avg_perc_err = 0
+for(i in 1:length(air_quality$Date)){
+  calc = 0
+  calc = calc + 8.7298019 + -0.9481553*air_quality$CO.GT.[i] + 0.0108770*air_quality$PT08.S2.NMHC.[i] + 0.0047004*air_quality$NOx.GT.[i] + 0.0031592*air_quality$PT08.S3.NOx.[i] + 0.0078420*air_quality$NO2.GT.[i] + -0.0031558*air_quality$PT08.S4.NO2.[i] + -0.0013385*air_quality$PT08.S5.O3.[i] + -0.3271813*air_quality$RH[i] + 19.9436334*air_quality$AH[i]
+  
+  sum_of_perc_errs = sum_of_perc_errs + 100*((air_quality$T[i] - calc)/air_quality$T[i])
+}
+avg_perc_err = sum_of_perc_errs/length(air_quality$Date)
+avg_perc_err
