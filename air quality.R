@@ -75,15 +75,19 @@ summary(reg_3)
 # None of the cross effects are significant, so we will continue to use reg_2
 
 sum_of_perc_errs = 0
+mag_sum_of_perc_errs = 0
 calc = 0
 for(i in 1:length(air_quality$Date)){
   calc = 0
   calc = calc + 15.309530 + -3.371883*air_quality$CO.GT.[i] + 1.329935*air_quality$C6H6.GT.[i] + -0.042487*air_quality$NOx.GT.[i]
 
   sum_of_perc_errs = sum_of_perc_errs + 100*((air_quality$T[i] - calc)/air_quality$T[i])
+  mag_sum_of_perc_errs = mag_sum_of_perc_errs + 100*((abs(air_quality$T[i] - calc))/air_quality$T[i])
 }
 avg_perc_err = sum_of_perc_errs/length(air_quality$Date)
-avg_perc_err
+avg_mag_perc_err = mag_sum_of_perc_errs/length(air_quality$Date)
+avg_perc_err # average percent error in predicting the temperature
+avg_mag_perc_err # average of magnitude of percent error in predicting temperature
 
 # Let's try with a different model:
 reg_4 = lm(T ~ . -Date -Time -PT08.S1.CO. -NMHC.GT. -C6H6.GT., data = air_quality)
