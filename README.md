@@ -29,10 +29,15 @@ Sensor 4 primarily recorded NO<sub>2</sub>, but also secondarily recorded tungst
 
 Lastly, sensor 5 recorded measurements of indium oxide In<sub>2</sub>O<sub>3</sub>, but it nominally targets ozone, O<sub>3</sub>. But since the data does not contain a column for O<sub>3</sub>, I did not need to consider its relation to indium oxide.
 
-Thus, I did not consider the secondary particulates when forming the model for the Temperature, since the primary particulate would be sufficient, and I wanted to avoid any cross-effects. Similarly, I also wanted to examine the relationship between relative humidity (RH) and absolute humidity (AH). I found that they are weakly linearly correlated, with a coefficient of about 0.48, so I wanted to exclude RH from the regression model, since there would be a weak cross-effect between RH and AH.
+Thus, I did not consider the secondary particulates when forming the model for the Temperature, since the primary particulate would be sufficient, and I wanted to avoid any cross-effects. Another factor to note is that one of the columns of the data records the amounts of nitrogen dioxide, NO<sub>2</sub>, and another column records the amounts of total nitrogen oxides, NO<sub>x</sub>; since NO<sub>2</sub> is a form of nitrogen oxide, this implies that the two variables may be related. To test this, I plotted them, and found their correlation coefficient to be about 0.86. Since there is a strong linear relationship, I decided to discard NO<sub>2</sub> for my analysis, and only consider NO<sub>x</sub>.
+
+
+
+Similarly, I also wanted to examine the relationship between relative humidity (RH) and absolute humidity (AH). I found that they are weakly linearly correlated, with a coefficient of about 0.48, so I wanted to exclude RH from the regression model, since there would be a weak cross-effect between RH and AH.
 
 ![](plots/AH_RH.png)
 
+#### Prediction with Linear Regression
 I first tried a linear regression model in which every primary particulate along with the Absolute Humidity were used as predictors, and sought to keep only the ones that were statistically significant. When looking at the calculated p-value of a chemical, I considered p-values less than 0.05 to be significant. I found that NMHC had a p-value of about 0.92, so after removing it, I came up with a model that has the 6 explanatory variables CO, C<sub>6</sub>H<sub>6</sub>, NO<sub>x</sub>, NO<sub>2</sub>, In<sub>2</sub>O<sub>3</sub> and AH. This model served as a fairly accurate predictor of the average temperature, as shown below:
 
 ![](reg/reg_2.JPG)
